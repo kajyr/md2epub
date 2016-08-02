@@ -1,17 +1,31 @@
 <package xmlns="http://www.idpf.org/2007/opf" unique-identifier="PrimaryID" version="2.0">
 	<metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
-		<dc:title>{{title}}</dc:title>
-		<dc:language>{{language}}</dc:language>
-		<dc:identifier id="PrimaryID" opf:scheme="ISBN">{{ISBN}}</dc:identifier>
-		<dc:creator opf:role="aut">{{creator}}</dc:creator>
-		<dc:publisher>{{publisher}}</dc:publisher>
-		<dc:date opf:event="publication">{{publication}}</dc:date>
-		<dc:rights>{{rights}}</dc:rights>
-		<meta content="cover-image" name="cover"/>
-	<meta content="2015-09-03" name="epubcheckdate"/>
-	<meta content="3.0.1" name="epubcheckversion"/>
-	<description xmlns="http://purl.org/dc/elements/1.1/">{{description}}</description>
-</metadata>
+		<% if (data.title) { %>
+		<dc:title><%= data.title %></dc:title>
+		<% } %>
+		<% if (data.language) { %>
+		<dc:language><%= data.language %></dc:language>
+		<% } %>
+		<% if (data.ISBN) { %>
+		<dc:identifier id="PrimaryID" opf:scheme="ISBN"><%= data.ISBN %></dc:identifier>
+		<% } %>
+		<% if (data.creator) { %>
+		<dc:creator opf:role="aut"><%= data.creator %></dc:creator>
+		<% } %>
+		<% if (data.publisher) { %>
+		<dc:publisher><%= data.publisher %></dc:publisher>
+		<% } %>
+		<% if (data.publication) { %>
+		<dc:date opf:event="publication"><%= data.publication %></dc:date>
+		<% } %>
+		<% if (data.rights) { %>
+		<dc:rights><%= data.rights %></dc:rights>
+		<% } %>
+		<meta content="3.0.1" name="epubcheckversion"/>
+		<% if (data.description) { %>
+		<description xmlns="http://purl.org/dc/elements/1.1/"><%= data.description %></description>
+		<% } %>
+	</metadata>
 	<manifest>
 	</manifest>
 	<spine toc="ncx">

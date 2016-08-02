@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "test": "tape tests/**/*.js | tap-spec"
+    "test": "tape tests/**/*.js | tap-spec"
   },
   "author": "Carlo 'kajyr' <carlo.panzi@gmail.com> (http://kajyr.github.io/)",
   "license": "ISC",
   "dependencies": {
     "commander": "^2.9.0",
+    "ejs": "^2.5.1",
     "fs-extra": "^0.30.0",
     "fs-promise": "^0.5.0"
   },
