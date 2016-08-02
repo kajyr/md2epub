@@ -15,7 +15,7 @@ options
 
 
 process.on('exit', () => {
-	//epub.clear();
+	epub.clear();
 });
 
 
