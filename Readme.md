@@ -1,3 +1,15 @@
 # Markdown to epub
 
-COnverts markdown documents in epub books
+Converts markdown documents to epub format
+
+## Usage
+
+Install:
+```
+npm install -g md2epub
+```
+
+To convert a file:
+```
+md2epub filename.md
+```
