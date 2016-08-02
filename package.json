@@ -9,6 +9,7 @@
   "author": "Carlo 'kajyr' <carlo.panzi@gmail.com> (http://kajyr.github.io/)",
   "license": "ISC",
   "dependencies": {
+    "archiver": "^1.0.1",
     "commander": "^2.9.0",
     "ejs": "^2.5.1",
     "fs-extra": "^0.30.0",

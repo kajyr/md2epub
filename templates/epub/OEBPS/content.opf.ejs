@@ -5,6 +5,8 @@
 		<% } %>
 		<% if (data.language) { %>
 		<dc:language><%= data.language %></dc:language>
+		<% } else {%>
+		<dc:language>en</dc:language>
 		<% } %>
 		<% if (data.ISBN) { %>
 		<dc:identifier id="PrimaryID" opf:scheme="ISBN"><%= data.ISBN %></dc:identifier>
@@ -27,30 +29,9 @@
 		<% } %>
 	</metadata>
 	<manifest>
+		<item media-type='application/xhtml+xml' id='book-content' href='index.html'/>
 	</manifest>
 	<spine toc="ncx">
-		<itemref idref="cvi" linear="yes"/>
-		<itemref idref="tp" linear="yes"/>
-		<itemref idref="cop" linear="yes"/>
-		<itemref idref="ded" linear="yes"/>
-		<itemref idref="toc" linear="yes"/>
-		<itemref idref="epi" linear="yes"/>
-		<itemref idref="fm1" linear="yes"/>
-		<itemref idref="c01" linear="yes"/>
-		<itemref idref="c02" linear="yes"/>
-		<itemref idref="c03" linear="yes"/>
-		<itemref idref="c04" linear="yes"/>
-		<itemref idref="c05" linear="yes"/>
-		<itemref idref="c06" linear="yes"/>
-		<itemref idref="c07" linear="yes"/>
-		<itemref idref="c08" linear="yes"/>
-		<itemref idref="c09" linear="yes"/>
-		<itemref idref="c10" linear="yes"/>
-		<itemref idref="c11" linear="yes"/>
-		<itemref idref="ata" linear="yes"/>
-		<itemref idref="ata1" linear="yes"/>
+		<itemref idref='book-content'/>
 	</spine>
-	<guide>
-
-	</guide>
 </package>
