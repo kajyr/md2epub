@@ -1,0 +1,42 @@
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="PrimaryID" version="2.0">
+	<metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+		<dc:title>{{title}}</dc:title>
+		<dc:language>{{language}}</dc:language>
+		<dc:identifier id="PrimaryID" opf:scheme="ISBN">{{ISBN}}</dc:identifier>
+		<dc:creator opf:role="aut">{{creator}}</dc:creator>
+		<dc:publisher>{{publisher}}</dc:publisher>
+		<dc:date opf:event="publication">{{publication}}</dc:date>
+		<dc:rights>{{rights}}</dc:rights>
+		<meta content="cover-image" name="cover"/>
+	<meta content="2015-09-03" name="epubcheckdate"/>
+	<meta content="3.0.1" name="epubcheckversion"/>
+	<description xmlns="http://purl.org/dc/elements/1.1/">{{description}}</description>
+</metadata>
+	<manifest>
+	</manifest>
+	<spine toc="ncx">
+		<itemref idref="cvi" linear="yes"/>
+		<itemref idref="tp" linear="yes"/>
+		<itemref idref="cop" linear="yes"/>
+		<itemref idref="ded" linear="yes"/>
+		<itemref idref="toc" linear="yes"/>
+		<itemref idref="epi" linear="yes"/>
+		<itemref idref="fm1" linear="yes"/>
+		<itemref idref="c01" linear="yes"/>
+		<itemref idref="c02" linear="yes"/>
+		<itemref idref="c03" linear="yes"/>
+		<itemref idref="c04" linear="yes"/>
+		<itemref idref="c05" linear="yes"/>
+		<itemref idref="c06" linear="yes"/>
+		<itemref idref="c07" linear="yes"/>
+		<itemref idref="c08" linear="yes"/>
+		<itemref idref="c09" linear="yes"/>
+		<itemref idref="c10" linear="yes"/>
+		<itemref idref="c11" linear="yes"/>
+		<itemref idref="ata" linear="yes"/>
+		<itemref idref="ata1" linear="yes"/>
+	</spine>
+	<guide>
+
+	</guide>
+</package>
