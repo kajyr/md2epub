@@ -2,6 +2,8 @@
 
 Converts markdown documents to epub format
 
+[![Build Status](https://travis-ci.org/kajyr/md2epub.svg?branch=master)](https://travis-ci.org/kajyr/md2epub)
+
 ## Usage
 
 Install:

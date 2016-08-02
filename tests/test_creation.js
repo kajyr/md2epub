@@ -22,9 +22,4 @@ test('Test folder creation ', function (t) {
 
 
    	});
-
-  //  t.equal(noDivision, null, 'No division found, should return null');
-  //  t.equal(dunhill, 'DUNHILL', 'In case of correct path, the division is found');
-  //  t.end();
-
 });
