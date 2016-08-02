@@ -2,6 +2,7 @@
 
 const fs = require('fs-promise');
 const options = require('commander');
+const marked = require('marked');
 
 const epub = require('./lib/EpubTemplate');
 
@@ -24,17 +25,32 @@ let tempData = {
 	creator: 'Carlo'
 }
 
+let readMD = function(file) {
+	return fs.readFile(file, 'utf8')
+}
+
 for (let file of files) {
 
-	console.log(file)
+	readMD(file).then(function(mdData) {
 
-	epub.create(file).then(function(folder) {
+		let html = marked(mdData);
 
-		epub.fillData(folder, tempData)
-
+		tempData.html = html;
 		// read from command line e template replace data
-		// add html files from markdown
-		// zip it
 
+		epub.create(file).then(function(folder) {
+
+			epub.fillData(folder, tempData)
+
+			// zip it
+
+		})
+
+	}).catch(function(err) {
+		if (err.code === 'ENOENT') {
+			console.log('Unable to open', err.path )
+		}
 	})
+
+
 }
