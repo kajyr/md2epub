@@ -40,6 +40,24 @@ let readMD = function(file) {
 	return fs.readFile(file, 'utf8')
 }
 
+let zipFolder = function(folder, zipFilePath) {
+	return new Promise((resolve, reject) => {
+
+		let output = fs.createWriteStream(zipFilePath);
+		let archive = archiver('zip');
+		output.on('close', function() {
+			return resolve(zipFilePath);
+		});
+		archive.on('error', function(err) {
+			return reject(err);
+		});
+
+		archive.pipe(output);
+		archive.directory(folder);
+		archive.finalize();
+	})
+}
+
 for (let file of files) {
 
 	readMD(file).then(function(mdData) {
@@ -51,28 +69,13 @@ for (let file of files) {
 
 		epub.create(file).then(function(folder) {
 
-			epub.fillData(folder, tempData)
-			return folder;
-			
-
+			return epub.fillData(folder, tempData).then(() => folder)
+		
 		}).then(function(folder) {
 			// zip it
-			let output = fs.createWriteStream( path.join(process.cwd(), ebookName(file)));
-			let archive = archiver('zip');
-			output.on('close', function() {
-				console.log(archive.pointer() + ' total bytes');
-				console.log('archiver has been finalized and the output file descriptor has closed.');
-			});
-
-			archive.on('error', function(err) {
-				throw err;
-			});
-
-			archive.pipe(output);
-			archive.bulk([
-			  { expand: true, cwd: folder, src: ['*'] }
-			]);
-			archive.finalize();
+			return zipFolder(folder, path.join(process.cwd(), ebookName(file)));
+		}).then(function(zipfile) {
+			console.log('Created', zipfile)
 		})
 
 	}).catch(function(err) {
