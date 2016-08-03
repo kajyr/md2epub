@@ -5,8 +5,6 @@
 		<% } %>
 		<% if (data.language) { %>
 		<dc:language><%= data.language %></dc:language>
-		<% } else {%>
-		<dc:language>en</dc:language>
 		<% } %>
 		<% if (data.ISBN) { %>
 		<dc:identifier id="PrimaryID" opf:scheme="ISBN"><%= data.ISBN %></dc:identifier>

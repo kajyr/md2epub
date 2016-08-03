@@ -1,6 +1,6 @@
 {
   "name": "md2epub",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,8 @@
     "ejs": "^2.5.1",
     "fs-extra": "^0.30.0",
     "fs-promise": "^0.5.0",
-    "marked": "^0.3.6"
+    "marked": "^0.3.6",
+    "questions": "git+https://github.com/kajyr/questions.git"
   },
   "bin": {
     "md2epub": "cli.js"
