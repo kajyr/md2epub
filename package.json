@@ -1,6 +1,6 @@
 {
   "name": "md2epub",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Converts markdown documents to epub format",
   "main": "index.js",
   "directories": {
@@ -20,15 +20,16 @@
     "marked": "^0.3.6",
     "questions": "git+https://github.com/kajyr/questions.git"
   },
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/kajyr/md2epub.git"
   },
-
   "keywords": [
-    "markdown", "md",
+    "markdown",
+    "md",
     "epub",
-    "ebooks", "ebook",
+    "ebooks",
+    "ebook",
     "conversion",
     "cli"
   ],
@@ -39,7 +40,7 @@
     "tap-spec": "^4.1.1",
     "tape": "^4.6.0"
   },
-    "bugs": {
+  "bugs": {
     "url": "https://github.com/kajyr/md2epub/issues"
   },
   "homepage": "https://github.com/kajyr/md2epub#readme"
