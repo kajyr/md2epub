@@ -21,7 +21,7 @@ process.on('exit', () => {
 
 
 // Set to avoid duplicates
-let files = new Set(options.args.filter((file) => file.match(/\.md$/i)));
+let files = new Set(options.args.filter((file) => file.match(epub.extensionRegex)));
 let ebookName = (file) => file.replace(/md$/i, 'epub');
 
 let readMD = function(file) {
